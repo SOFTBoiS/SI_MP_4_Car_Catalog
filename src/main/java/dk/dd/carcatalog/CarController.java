@@ -26,13 +26,13 @@ public class CarController
             return (List<dk.dd.carcatalog.Car>) repo.findAll();
         }
 
-        @GetMapping("/{brand}")
+        @GetMapping("/brand/{brand}")
         public dk.dd.carcatalog.Car findByBrand(@PathVariable String brand)
         {
             return repo.findByBrand(brand);
         }
 
-        @GetMapping("/{id}")
+        @GetMapping("/brand/{id}")
         public Optional<dk.dd.carcatalog.Car> findById(@PathVariable long id)
         {
             Optional<dk.dd.carcatalog.Car> res = repo.findById(id);
