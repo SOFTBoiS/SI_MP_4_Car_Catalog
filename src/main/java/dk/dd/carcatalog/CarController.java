@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-//@RestController
+@RestController
 //@RepositoryRestController
 @RepositoryRestResource
 @ResponseBody
@@ -32,7 +32,7 @@ public class CarController
             return repo.findByBrand(brand);
         }
 
-        @GetMapping("/brand/{id}")
+        @GetMapping("/id/{id}")
         public Optional<dk.dd.carcatalog.Car> findById(@PathVariable long id)
         {
             Optional<dk.dd.carcatalog.Car> res = repo.findById(id);
