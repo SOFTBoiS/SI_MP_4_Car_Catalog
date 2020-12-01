@@ -32,6 +32,13 @@ public class CarController
             return repo.findByBrand(brand);
         }
 
+        @GetMapping("/{id}")
+        public Optional<dk.dd.carcatalog.Car> findById(@PathVariable long id)
+        {
+            Optional<dk.dd.carcatalog.Car> res = repo.findById(id);
+            return res;
+        }
+
         @PostMapping("/")
         public String saveCar(@RequestBody dk.dd.carcatalog.Car car)
         {
