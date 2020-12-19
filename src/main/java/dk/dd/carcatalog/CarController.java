@@ -3,6 +3,7 @@ package dk.dd.carcatalog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
+import org.springframework.hateoas.server.ExposesResourceFor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,7 @@ import java.util.Optional;
 @RepositoryRestResource
 @ResponseBody
 @RequestMapping("/cars")
+@ExposesResourceFor(Car.class)
 public class CarController
 {
         @Autowired
